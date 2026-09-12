@@ -1,0 +1,40 @@
+.banner-wrapper {
+    position: relative;
+    width: 1520px;
+    margin: 0 auto;
+}
+.banner {
+    width: 100%;
+    overflow: hidden;
+    cursor: pointer;
+}
+.banner img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+.bannerArrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    width: 50px;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: white;
+    background: rgba(255, 255, 255, 0.35);
+    transition: background 0.2s ease;
+}
+.bannerArrow:hover {
+    background: rgba(171, 171, 171, 0.6);
+}
+.arrowLeft {
+    left: 0;
+}
+.arrowRight {
+    right: 0;
+}

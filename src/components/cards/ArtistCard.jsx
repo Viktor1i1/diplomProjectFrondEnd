@@ -1,0 +1,1 @@
+//https://cdn.kontramarka.ua/uploads/resize/shows/logo/630x891_no-image-show-logo.webp

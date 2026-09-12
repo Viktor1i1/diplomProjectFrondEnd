@@ -1,0 +1,85 @@
+.blockCitySelector {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.city-selector-button {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  background: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  font-family: inherit;
+}
+.spanCity {
+  color: #767777;
+  font-size: 16px;
+  font-weight: 700;
+  transition: color 0.2s ease;
+}
+.city-selector-button:hover .spanCity,
+.city-selector-button:hover .city-arrow {
+  color: #333333;
+}
+.city-arrow {
+  font-size: 21px;
+  color: #767777;
+  line-height: 1;
+}
+.citySelector {
+  position: absolute;
+  top: calc(100% + 14px);
+  right: 0;
+  width: 300px;
+  background-color: #f2f2f2;
+  padding: 24px 20px 20px 20px;
+  border-radius: 4px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+}
+
+.city-label {
+  font-size: 13px;
+  color: #666;
+  margin-bottom: 6px;
+  font-weight: 400;
+  text-align: left;
+}
+
+.citySelector select {
+  width: 100%;
+  padding: 10px 12px;
+  font-size: 14px;
+  color: #333;
+  background-color: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  margin-bottom: 16px;
+  outline: none;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.applyCityButton {
+  width: 100%;
+  padding: 12px;
+  background-color: #1bb5be;
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  cursor: pointer;
+  margin-top: 6px;
+  font-family: inherit;
+  transition: background-color 0.2s;
+}
+
+.applyCityButton:hover {
+  background-color: #169fa7;
+}

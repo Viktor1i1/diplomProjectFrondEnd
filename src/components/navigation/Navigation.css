@@ -1,0 +1,45 @@
+.navigation {
+  background: white;
+  border-bottom: 1px solid #e5e5e5;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  margin-left: 80px;
+}
+
+.navigation-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  padding: 18px 40px;
+  padding-left: 60px;
+}
+
+.logo {
+  text-decoration: none;
+  color: #111;
+  font-size: 28px;
+  font-weight: 800;
+  letter-spacing: -1px;
+  margin-right: 60px;
+}
+
+.categories {
+  display: flex;
+  align-items: center;
+  gap: 35px;
+}
+
+.category-link {
+  text-decoration: none;
+  color: black;
+  font-size: 19px;
+  font-weight: 700;
+
+  transition: color 0.2s ease;
+}
+
+.category-link:hover {
+  color: #616161;
+}
