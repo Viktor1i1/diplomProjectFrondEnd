@@ -12,7 +12,7 @@ import AddEvent from './pages/event/AddEvent'
 import AddArtist from './pages/artist/AddArtist'
 import AddCategory from './pages/categories/AddCategory'
 
-
+import ArtistDetail from './pages/artist/ArtistDetail'
 function App() {
   const [city, setCity] = useState("Львів");
   return (
@@ -27,6 +27,7 @@ function App() {
                 <Route path="/addEvent" element={<AddEvent />} />
                 <Route path="/addArtist" element={<AddArtist />} />
                 <Route path="/addCategory" element={<AddCategory />} />
+                <Route path="/artists/:id" element={<ArtistDetail />} />
             </Route>
 
             <Route path="/login" element={<Login />} />

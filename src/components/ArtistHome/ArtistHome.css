@@ -1,0 +1,67 @@
+.artistsHome {
+    width: 100%;
+    display: flex;
+    margin-top: 20px;
+    align-items: center;
+    gap: 15px;
+    padding: 20px 30px;
+    box-sizing: border-box;
+    box-shadow: 0 8px 10px 10px rgba(0, 0, 0, 0.12);
+    margin-bottom: 100px;
+}
+.artistsList {
+    flex: 1;
+
+    display: grid;
+    grid-template-columns: repeat(15, 1fr);
+
+    overflow: hidden;
+
+    align-items: center;
+}
+.artistCard {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    min-width: 0;
+}
+.artistImage {
+    width: 65px;
+    height: 65px;
+
+    border-radius: 50%;
+
+    object-fit: cover;
+
+    cursor: pointer;
+
+    transition: transform 0.2s;
+}
+.artistImage:hover {
+    transform: scale(1.08);
+}
+.artistArrow {
+    width: 40px;
+    height: 40px;
+
+    flex-shrink: 0;
+
+    border: none;
+    background: none;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+
+    transition: transform 0.2s, opacity 0.2s;
+}
+.artistArrow:hover:not(:disabled) {
+    transform: scale(1.15);
+}
+.artistArrow:disabled {
+    opacity: 0.3;
+    cursor: default;
+}

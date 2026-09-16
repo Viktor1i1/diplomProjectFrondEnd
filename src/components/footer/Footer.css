@@ -1,0 +1,137 @@
+.footerCategory-link:hover {
+  color: #616161;
+}
+.footerCategories {
+  display: flex;
+  justify-content: center;
+  gap: 48px;
+  padding-bottom: 32px;
+  border-bottom: 1px solid #333;
+  margin-bottom: 32px;
+}
+.footerCategory-link {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  transition: color 0.2s ease;
+}
+.footerCategory-link:hover {
+  color: #e63946;
+}
+.footerContainer {
+  background-color: #1a1a1a;
+  color: #ffffff;
+  padding: 24px 40px;
+  font-family: Arial, sans-serif;
+}
+.footerBox {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 80px;           
+  max-width: 1400px;  
+  margin: 0 auto;    
+  flex-wrap: wrap;
+  padding-left: 170px;
+}
+.box1 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 8px;
+  max-width: 260px;
+}
+.box1 img:first-child {
+  height: 48px;
+  margin-bottom: 8px;
+}
+.box1 p {
+  margin: 0;
+  font-size: 13px;
+  color: #b0b0b0;
+}
+.box1 img:last-child {
+  margin-top: 16px;
+  border: 1px solid #444;
+  border-radius: 12px;
+  padding: 12px 24px;
+  width: 100%;
+}
+.box2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.app {
+  display: flex;
+  gap: 12px;
+}
+
+.app img {
+  height: 44px;
+}
+
+.box2 p {
+  font-size: 20px;
+  margin: 0;
+  margin-top: 10px;
+}
+.box3 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  min-width: 100px;
+}
+.box3 p:first-child {
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 0.5px;
+}
+.box3 p:not(:first-child) {
+  color: white;
+  font-size: 14px;
+  cursor: pointer;
+}
+.box4 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  min-width: 180px;
+}
+.box4 p:first-child,
+.box4 p:nth-child(4) {
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 0.5px;
+}
+.box4 p:not(:first-child):not(:nth-child(4)) {
+  color: white;
+  font-size: 14px;
+  cursor: pointer;
+}
+.pay {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+.pay img {
+  height: 28px;
+}
+@media (max-width: 900px) {
+  .footerCategories {
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+  .footerBox {
+    justify-content: center;
+    text-align: center;
+  }
+}

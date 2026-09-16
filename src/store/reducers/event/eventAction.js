@@ -1,5 +1,5 @@
 import { api } from "../../../api";
-export const loadEvents = (page = 1)=> async(dispatch)=>{
+export const loadEvents = (page = 3)=> async(dispatch)=>{
     dispatch({type: "loading_events" });
     try{
         const response = await api.get(`events?page=${page}`);

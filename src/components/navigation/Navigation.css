@@ -4,7 +4,7 @@
   position: sticky;
   top: 0;
   z-index: 1000;
-  margin-left: 80px;
+  padding-left: 80px;
 }
 
 .navigation-container {
@@ -34,9 +34,9 @@
 .category-link {
   text-decoration: none;
   color: black;
-  font-size: 19px;
-  font-weight: 700;
-
+  font-size: 16px;
+  font-weight: 900;
+  text-transform: uppercase;
   transition: color 0.2s ease;
 }
 

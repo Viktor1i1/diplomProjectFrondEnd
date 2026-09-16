@@ -4,6 +4,7 @@ const initState = {
     isLoading: false,
     pageCount: 1
 }
+
 export function artistReducer(state= initState,action){
     switch(action.type){
         case "loading_artists":

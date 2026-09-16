@@ -21,6 +21,27 @@ export const eventApi = createApi({
             providesTags: ["Event"],
         }),
 
+        getEventsForHome: build.query({
+            query: (params) => ({
+                url: "events",
+                params: {
+                    page: params?.page || 1,
+                    page_size: params?.page_size || 100
+                }
+            })
+        }),
+
+        getArtistEvents: build.query({
+            query: (artistId) => ({
+                url: "events",
+                params: {
+                    artist_id: artistId,
+                    page: 1,
+                    page_size: 1000,
+                },
+            }),
+        }),
+
         addEvent: build.mutation({
             query: (data) => ({
                 url: "events",
@@ -34,5 +55,7 @@ export const eventApi = createApi({
 export const { 
     useGetEventQuery,
     useGetEventsQuery,
+    useGetEventsForHomeQuery,
+    useGetArtistEventsQuery,
     useAddEventMutation 
 } = eventApi;

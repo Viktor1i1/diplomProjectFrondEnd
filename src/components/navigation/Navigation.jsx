@@ -12,14 +12,9 @@ function Navigation(){
             <div className="navigation-container">
                 <Link to="/" className="logo">KONTRAMARKA</Link>
                 <div className="categories">
-                    {isLoading && (
-                        <span>Завантаження...</span>
-                    )}
-                    {isError && (
-                        <span>Не вдалося завантажити категорії</span>
-                    )}
-                    {!isLoading &&
-                        !isError &&
+                    {isLoading && (<span>Завантаження...</span>)}
+                    {isError && (<span>Не вдалося завантажити категорії</span>)}
+                    {!isLoading && !isError &&
                         categories.map((category) => (
                             <Link key={category.id} to="#" className="category-link">{category.name}</Link>
                         ))
