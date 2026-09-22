@@ -15,7 +15,7 @@ function EventCard({event}){
                     flexDirection: "column",
                     width: "100%",
                     height: "100%",
-                    borderRadius: "16px",
+                    borderRadius: "10px",
                     overflow: "hidden",
                     boxShadow: "0px 2px 10px rgba(0,0,0,0.15)",
                     backgroundColor: "#fff",
@@ -127,7 +127,7 @@ function EventCard({event}){
                         }}
                     >
                         <ConfirmationNumberIcon fontSize="small" style={{ color: "#888" }} />
-                        {event.price}
+                        {event.price} грн
                     </div>
                     <button
                         style={{

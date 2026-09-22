@@ -5,6 +5,17 @@ import "./Navigation.css";
 function Navigation(){
     const {data, isLoading, isError} = useGetCategoriesQuery();
 
+    const categoryLinks = {
+        "Концерти": "concerts",
+        "Фестивалі": "festivals",
+        "Театр": "theatre",
+        "Stand up": "stand-up",
+        "Спорт": "sport",
+        "Виставки": "exhibitions",
+        "Для дітей": "kids",
+        "Екскурсії": "excursions",
+        "Зоопарк": "zoo"
+    };
     const categories = data?.payload?.items || [];
 
     return (
@@ -16,7 +27,7 @@ function Navigation(){
                     {isError && (<span>Не вдалося завантажити категорії</span>)}
                     {!isLoading && !isError &&
                         categories.map((category) => (
-                            <Link key={category.id} to="#" className="category-link">{category.name}</Link>
+                            <Link key={category.id} to={categoryLinks[category.name]} className="category-link">{category.name}</Link>
                         ))
                     }
                 </div>

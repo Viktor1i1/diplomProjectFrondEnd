@@ -1,8 +1,6 @@
-import { useState } from "react";
 import "./btnEventsSort.css"
 
-function BtnEventSort(){
-    const [selectMonth,setSelectMonth] = useState(null);
+function BtnEventSort({selectMonth, setSelectMonth}){
 
     const months = ["Серпень","Вересень","Жовтень","Листопад","Грудень","Січень","Лютий"]
 
@@ -10,7 +8,7 @@ function BtnEventSort(){
         <div className="filterMonths">
             <div className="eventsMonths">
                 {months.map((month)=>(
-                    <button key={month} className="eventsMonth">{month}
+                    <button key={month} className="eventsMonth" onClick={() => setSelectMonth(month)}>{month} 
                     </button>
                 ))}
             </div>

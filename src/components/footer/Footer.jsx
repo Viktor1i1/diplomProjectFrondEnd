@@ -13,6 +13,18 @@ function Footer(){
     const {data, isLoading, isError} = useGetCategoriesQuery();
     const categories = data?.payload?.items || [];
 
+    const categoryLinks = {
+        "Концерти": "concerts",
+        "Фестивалі": "festivals",
+        "Театр": "theatre",
+        "Stand up": "stand-up",
+        "Спорт": "sport",
+        "Виставки": "exhibitions",
+        "Для дітей": "kids",
+        "Екскурсії": "excursions",
+        "Зоопарк": "zoo"
+    };
+
 
     return(
         <div className="footerContainer">
@@ -20,7 +32,7 @@ function Footer(){
                 {isLoading && (<span>Завантаження...</span>)}
                     {!isLoading && !isError &&
                         categories.map((category) => (
-                            <Link key={category.id} to='/${category.name}' className="footerCategory-link">{category.name}</Link>
+                            <Link key={category.id} to={categoryLinks[category.name]} className="footerCategory-link">{category.name}</Link>
                         ))
                     }
              </div>

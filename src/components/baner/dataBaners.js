@@ -11,7 +11,6 @@ const banerImages = {
     27 : "https://cdn.kontramarka.ua/uploads/resize/slider/image/1920x700_1788248549_kontramarka-1920_700-3.webp",
     42 : "https://cdn.kontramarka.ua/uploads/resize/slider/image/1920x700_1788169377_photo_2026-08-31_12-41-33.webp",
     91 : "https://cdn.kontramarka.ua/uploads/resize/slider/image/1920x700_1787851935_sirka-1920x700.webp",
-    92 : "https://cdn.kontramarka.ua/uploads/resize/slider/image/1920x700_1788184395_sugar_1920h700.webp",
     93 : "https://cdn.kontramarka.ua/uploads/resize/slider/image/1920x700_1787400878_1920h700-lviv.webp",
     95 : "https://cdn.kontramarka.ua/uploads/resize/slider/image/1920x700_1785243209_574ne5reee5e.webp",
     105 : "https://cdn.kontramarka.ua/uploads/resize/slider/image/1920x700_1787916789_kler_kotramarka_2_1920h700.webp",

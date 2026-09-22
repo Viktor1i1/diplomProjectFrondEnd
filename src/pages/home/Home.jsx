@@ -1,22 +1,33 @@
+import { useState,useEffect } from "react";
 import Baner from "../../components/baner/Baner";
 import ArtistHome from "../../components/ArtistHome/ArtistHome";
-import BtnEventsSort from "../../components/btnEventsSort/btnEventsSort";
+import BtnEventSort from "../../components/btnEventsSort/BtnEventsSort";
+import BtnCategoriesSort from "../../components/btnCategoriesSort/btnCategoriesSort";
 import EventHome from "../../components/EventHome/EventHome";
 
 function Home({city}) {
+    const [selectMonth, setSelectMonth] = useState(null);
+    const [selectCategory,setSelectCategory] = useState("Усі типи")
+    useEffect(() => {
+        setSelectMonth(null);
+        setSelectCategory("Усі типи");
+    }, [city]);
     return(
         <div>
             <div>
                 <Baner city={city}/>
             </div>
-            <div>
+            <div>  
                 <ArtistHome/>
             </div>
             <div>
-                <BtnEventsSort/>
+                <BtnEventSort selectMonth={selectMonth} setSelectMonth={setSelectMonth}/>
+            </div>
+            <div style={{marginTop: "20px",marginBottom:"20px"}}>
+                <BtnCategoriesSort selectCategory={selectCategory} setSelectCategory={setSelectCategory}/>
             </div>
             <div>
-                <EventHome city={city}/>
+                <EventHome city={city} selectMonth={selectMonth} selectCategory={selectCategory}/>
             </div>
         </div>
     )

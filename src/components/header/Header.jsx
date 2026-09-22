@@ -18,9 +18,7 @@ function Header({ city, setCity }) {
                     isAuth 
                     ? (
                         <div style={{display: "flex", alignItems: "center"}}>
-                            <Link style={{marginRight: "20px"}} to="/profile" className="nav-link">
-                                <img style={{marginRight: "20px", borderRadius: "50%"}} alt={user.email} width="40px" height="40px" src={user.image ? user.image : defaultAvatar}/>
-                            </Link>
+                            <Link style={{marginRight: "20px"}} to="/profile" className="nav-link">Профіль</Link>
                             <Link onClick={logoutHandler} className="nav-link">Вийти</Link>
                         </div>
                     )

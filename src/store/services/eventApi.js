@@ -48,7 +48,7 @@ export const eventApi = createApi({
                 method : "POST",
                 body : data,
             }),
-            invalidatesTags: ["Events"],//дані будуть невалідні
+            invalidatesTags: ["Events"],
         }),
     })
 })

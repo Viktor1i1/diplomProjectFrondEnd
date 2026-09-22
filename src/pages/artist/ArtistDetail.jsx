@@ -27,12 +27,10 @@ function ArtistDetail() {
     if (!artist) {
         return <div className="artist-not-found">Артиста не знайдено</div>;
     }
-
     return (
         <div className="artist-page">
-
             <Helmet>
-                <title>{artist.name} — Kontramarka</title>
+                <title>{artist.name}</title>
             </Helmet>
             <section className="artist-hero">
                 <img
@@ -63,13 +61,12 @@ function ArtistDetail() {
                     {events?.length > 0 ? (
                         <div className="artist-events-list">
                             {events.map((event) => (
-                                <div
-                                    className="artist-event-row"
-                                    key={event.id}
-                                >
-                                    <div className="event-name">
-                                        {event.name || event.title || artist.name}
-                                    </div>
+                                <div className="artist-event-row" key={event.id}>
+                                    <Link to={`/events/${event.id}`}>
+                                        <div className="event-name" onClick={() => navigate(`/events/${event.id}`)}>
+                                            {event.name || event.title || artist.name}
+                                        </div>
+                                    </Link>
                                     <div className="event-date">
                                         <strong>
                                             {event.date || event.datetime || "Дата уточнюється"}
@@ -87,7 +84,7 @@ function ArtistDetail() {
                                             : "Ціна уточнюється"}
                                     </div>
                                     <Link
-                                        to={`/event/${event.id}`}
+                                        to={`/events/${event.id}`}
                                         className="event-ticket-button"
                                     >
                                         Купити квиток

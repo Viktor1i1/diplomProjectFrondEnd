@@ -13,26 +13,31 @@ import AddArtist from './pages/artist/AddArtist'
 import AddCategory from './pages/categories/AddCategory'
 
 import ArtistDetail from './pages/artist/ArtistDetail'
+import EventDetail from './pages/event/EventDetail'
+
+import ConcertPage from './pages/CategoriesPages/ConcertPage'
 function App() {
   const [city, setCity] = useState("Львів");
   return (
     <>
       <Routes>
             <Route element={<Layout city={city} setCity={setCity}/>}>
-                <Route
-                    path="/"
-                    element={<Home city={city} />}
-                />
+                <Route path="/" element={<Home city={city} />}/>
 
                 <Route path="/addEvent" element={<AddEvent />} />
                 <Route path="/addArtist" element={<AddArtist />} />
                 <Route path="/addCategory" element={<AddCategory />} />
                 <Route path="/artists/:id" element={<ArtistDetail />} />
+                <Route path="/events/:id" element={<EventDetail/>} />
+
+                <Route path="/concerts" element={<ConcertPage/>} />
             </Route>
 
             <Route path="/login" element={<Login />} />
             <Route path="/profile" element={<Profile />} />
             <Route path="/register" element={<Registration />} />
+
+
         </Routes>
     </>
   );

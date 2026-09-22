@@ -1,0 +1,32 @@
+.filterCategories {
+    width: 1100px;
+    margin: 0 auto;
+}
+
+.eventsCategories {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+    background-color: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 6px;
+    padding: 14px 20px;
+}
+
+.eventsCategories > div {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 600;
+    font-size: 15px;
+    color: #333;
+    cursor: pointer;
+}
+
+.eventsCategories input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    accent-color: #d32f2f;
+    cursor: pointer;
+}
