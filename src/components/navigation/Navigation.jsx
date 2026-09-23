@@ -1,4 +1,4 @@
-import { Link } from "react-router";
+import { Link} from "react-router";
 import { useGetCategoriesQuery } from "../../store/services/categoryApi";
 import "./Navigation.css";
 

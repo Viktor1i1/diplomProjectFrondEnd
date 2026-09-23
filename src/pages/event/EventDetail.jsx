@@ -5,6 +5,9 @@ import { Helmet } from "react-helmet-async";
 import { useEffect, useState } from "react";
 import Spiner from "../../components/spiner/Spiner";
 import { Link } from "react-router";
+import FacebookIcon from '@mui/icons-material/Facebook';
+import TwitterIcon from '@mui/icons-material/Twitter';
+import PinterestIcon from '@mui/icons-material/Pinterest';
 import "./EventDetail.css"
 
 function EventDetail() {
@@ -114,9 +117,9 @@ function EventDetail() {
                 </div>
                 <div className="share">Поділитися в соцмережах:
                     <span className="icons">
-                        <span>f</span>
-                        <span>p</span>
-                        <span>t</span>
+                        <span style={{backgroundColor:"#333",color:"#fff"}}><FacebookIcon/></span>
+                        <span><PinterestIcon/></span>
+                        <span><TwitterIcon/></span>
                     </span>
                 </div>
             </div>

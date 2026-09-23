@@ -15,7 +15,7 @@ import AddCategory from './pages/categories/AddCategory'
 import ArtistDetail from './pages/artist/ArtistDetail'
 import EventDetail from './pages/event/EventDetail'
 
-import ConcertPage from './pages/CategoriesPages/ConcertPage'
+import CategoriesPages from './pages/CategoriesPages/CategoriesPages'
 function App() {
   const [city, setCity] = useState("Львів");
   return (
@@ -30,7 +30,7 @@ function App() {
                 <Route path="/artists/:id" element={<ArtistDetail />} />
                 <Route path="/events/:id" element={<EventDetail/>} />
 
-                <Route path="/concerts" element={<ConcertPage/>} />
+                <Route path="/:type" element={<CategoriesPages city={city}/>}/>
             </Route>
 
             <Route path="/login" element={<Login />} />

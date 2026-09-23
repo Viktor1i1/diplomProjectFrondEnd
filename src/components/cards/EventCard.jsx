@@ -7,7 +7,7 @@ import ConfirmationNumberIcon from '@mui/icons-material/ConfirmationNumber';
 
 function EventCard({event}){
     return(
-        <Link to={`events/${event.id}`} style={{ textDecoration: "none" }}>
+        <Link to={`/events/${event.id}`} style={{ textDecoration: "none" }}>
             <div
                 className="eventCard"
                 style={{

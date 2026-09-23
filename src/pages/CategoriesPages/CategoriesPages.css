@@ -1,4 +1,4 @@
-.concert-breadcrumb {
+.category-breadcrumb {
     width: 100%;
     max-width: 1000px;
     margin: 0 auto;
@@ -6,10 +6,42 @@
     font-size: 12px;
     color: #777;
 }
-.concert-breadcrumb a {
+.category-breadcrumb a {
     color: #e52b2b;
     text-decoration: none;
 }
-.concert-breadcrumb a:hover {
+.category-breadcrumb a:hover {
     text-decoration: underline;
+}
+.filterGenre {
+    width: 1200px;
+    margin: 0 auto;
+}
+
+.eventsGenre {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    background-color: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 6px;
+    padding: 14px 20px;
+}
+
+.eventsGenre > div {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 600;
+    font-size: 15px;
+    color: #333;
+    cursor: pointer;
+}
+
+.eventsGenre input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    accent-color: #d32f2f;
+    cursor: pointer;
 }
