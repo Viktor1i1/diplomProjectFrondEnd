@@ -5,6 +5,8 @@ import { eventTypes } from "../genre/eventType";
 import "./CategoriesPages.css"
 import EventCard from "../../components/cards/EventCard";
 import { useGetEventsForHomeQuery } from "../../store/services/eventApi";
+import { Helmet } from "react-helmet-async";
+
 function CategoriesPage({city}){
     const { type } = useParams(); 
     const { data, isLoading, isError,isSuccess } = useGetEventsForHomeQuery (); 
@@ -57,6 +59,9 @@ function CategoriesPage({city}){
                 </div>
             </div>
             <div className="eventHome">
+                <Helmet>
+                    <title>{category.name}</title>
+                </Helmet>
             <div
                 className="eventsList"
                 style={{

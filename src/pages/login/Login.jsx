@@ -11,10 +11,15 @@ import { env } from "../../env";
 import { jwtDecode } from "jwt-decode";
 import { api } from "./../../api";
 import { login } from "../../store/slices/auth/authSlice";
+import { Link } from "react-router";
 import { useDispatch } from "react-redux";
 import { setCookie } from "../../services/cookieService";
 import { toast } from "react-toastify";
 import { Helmet } from "react-helmet-async";
+
+
+
+
 const cardContainer = {
     maxWidth: "470px",
     width: "90%",
@@ -89,7 +94,6 @@ function Login() {
     const navigate = useNavigate();
     const dispatch = useDispatch();
 
-    // Наша функція submit
     async function formSubmit(values) {
         try {
             const response = await api.post("auth/login", values);
@@ -104,7 +108,6 @@ function Login() {
             }
 
             dispatch(login(token));
-            // Перекинути на головну сторінку
             navigate("/", { replace: true });
         } catch (error) {
             const { response } = error;
@@ -141,7 +144,6 @@ function Login() {
         validationSchema: schema,
     });
 
-    // google auth
     function googleSuccessHandler(response) {
         const token = response.credential;
 
@@ -214,6 +216,10 @@ function Login() {
                                 ? formik.errors.password
                                 : ""}
                         </div>
+                    </div>
+                    <div style={{display:"flex",gap:"130px"}}>
+                        <p>Ще немаєте акаунта?</p>
+                        <Link to={"/register"} style={{color:"black"}}><p>Зареєструватись</p></Link>
                     </div>
 
                     <div style={fieldsGroup}>

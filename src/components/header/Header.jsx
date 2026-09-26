@@ -7,7 +7,7 @@ import "./Header.css";
 
 function Header({ city, setCity }) {
     const dispatch = useDispatch();
-    const {isAuth, user} = useSelector((state) => state.auth);
+    const {isAuth} = useSelector((state) => state.auth);
     function logoutHandler() {
         dispatch(logout());
     }

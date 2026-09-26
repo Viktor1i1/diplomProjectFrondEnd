@@ -3,46 +3,27 @@ import {useNavigate, useParams } from "react-router";
 import { useGetEventQuery ,useGetEventsForHomeQuery} from "../../store/services/eventApi";
 import { Helmet } from "react-helmet-async";
 import { useEffect, useState } from "react";
+import { useSelector } from "react-redux";
 import Spiner from "../../components/spiner/Spiner";
 import { Link } from "react-router";
 import FacebookIcon from '@mui/icons-material/Facebook';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import PinterestIcon from '@mui/icons-material/Pinterest';
+import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
+import AccessTimeIcon from '@mui/icons-material/AccessTime';
+import LocalActivityIcon from '@mui/icons-material/LocalActivity';
+import LocationPinIcon from '@mui/icons-material/LocationPin';
 import "./EventDetail.css"
 
 function EventDetail() {
     const { id } = useParams();
     const navigate = useNavigate();
-    const [isFavorite, setIsFavorite] = useState(false);
     const {data,isLoading,isError,isSuccess} = useGetEventQuery(id);
     const {data: eventsData} = useGetEventsForHomeQuery({page: 1,page_size: 1000});
+    const {isAuth} = useSelector((state) => state.auth);
 
-    function switchFavorite() {
-        const value = !isFavorite;
-        setIsFavorite(value);
-        const localFavorite = localStorage.getItem("favorite");
-        let items = [];
-        if (localFavorite) {
-            items = JSON.parse(localFavorite);
-        }
-        if (value) {
-            if (!items.includes(id)) {
-                items.push(id);
-            }
-        } else {
-            items = items.filter((item) => item != id);
-        }
-        localStorage.setItem("favorite", JSON.stringify(items));
-    }
     useEffect(() => {
         window.scrollTo(0, 0);
-        const localData = localStorage.getItem("favorite");
-        if (localData) {
-            const items = JSON.parse(localData);
-            if (items.some((item) => item == id)) {
-                setIsFavorite(true);
-            }
-        }
     }, [id]);
 
     if (isLoading) {
@@ -107,13 +88,17 @@ function EventDetail() {
                 </div>
                 <div className="card venue-card">
                     <div className="venue-left">
-                        <span className="pin">📍</span>
+                        <span className="pin"><LocationPinIcon/></span>
                         <div>
                             <div className="name">{event.city}</div>
                             <div className="addr">{event.address}</div>
                         </div>
                     </div>
-                    <button className="buy-btn">КУПИТИ КВИТОК</button>
+
+                    <Link to={isAuth ? `/events/${event.id}/booking` : '/login'} className="buy-btn">
+                        КУПИТИ КВИТОК
+                    </Link>
+                    
                 </div>
                 <div className="share">Поділитися в соцмережах:
                     <span className="icons">
@@ -121,17 +106,17 @@ function EventDetail() {
                         <span><PinterestIcon/></span>
                         <span><TwitterIcon/></span>
                     </span>
-                </div>
+                </div>//className="buy-btn
             </div>
             <div className="content-grid">
                 <div className="main-col">
                     <div className="card order-card">
                         <h3>Замовити квитки на «{event.name}»</h3>
-                        <div className="order-date">📅 {day} {months[eventDate.getMonth()].toLowerCase()}</div>
+                        <div className="order-date"><CalendarMonthIcon/> {day} {months[eventDate.getMonth()].toLowerCase()}</div>
                         <div className="order-row">
                             <div className="meta">
-                                <span>🕒 <b>{event.time}</b></span>
-                                <span>🎫 {event.price} грн</span>
+                                <span><AccessTimeIcon/> <b>{event.time}</b></span>
+                                <span><LocalActivityIcon/> {event.price} грн</span>
                             </div>
                             <button className="buy-btn">Купити квиток</button>
                         </div>
@@ -168,12 +153,6 @@ function EventDetail() {
                     </div>
                 </div>
             )}
-            <button
-                onClick={switchFavorite}
-                className="favorite-button"
-            >
-                {isFavorite ? ("❤️ В обраних") : ("♡ Додати в обрані")}
-            </button>
         </div>
     );
 }

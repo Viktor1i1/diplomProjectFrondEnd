@@ -9,6 +9,8 @@ import { login } from "../../store/slices/auth/authSlice";
 import { useDispatch } from "react-redux";
 import { setCookie } from "../../services/cookieService";
 import { toast } from "react-toastify";
+import { Helmet } from "react-helmet-async";
+
 const cardContainer = {
     maxWidth: "470px",
     width: "90%",
@@ -164,6 +166,9 @@ function Registration() {
         <GoogleOAuthProvider clientId={env.googleClientId}>
             <div style={cardContainer}>
                 <h1>Реєстрація</h1>
+                <Helmet>
+                    <title>Реєстрація</title>
+                </Helmet>
                 <form
                     onSubmit={formik.handleSubmit}
                     style={{

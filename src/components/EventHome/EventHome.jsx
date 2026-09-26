@@ -27,11 +27,14 @@ function EventHome({city,selectMonth,selectCategory}){
         }; 
         return month == months[selectMonth];
     })
+    if (filteredEvents.length === 0) {
+        return <h2 style={{textAlign:"center"}}>Подій не знайдено</h2>
+    }
 
-    console.log(events);
     if (isError) {
         return <h2>Помилка завантаження подій</h2>;
     }
+    
     return (
         <div className="eventHome">
             <div

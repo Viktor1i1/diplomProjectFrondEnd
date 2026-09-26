@@ -1,4 +1,6 @@
 import { useState,useEffect } from "react";
+import { Helmet } from "react-helmet-async";
+
 import Baner from "../../components/baner/Baner";
 import ArtistHome from "../../components/ArtistHome/ArtistHome";
 import BtnEventSort from "../../components/btnEventsSort/BtnEventsSort";
@@ -14,6 +16,9 @@ function Home({city}) {
     }, [city]);
     return(
         <div>
+            <Helmet>
+                <title>Головна</title>
+            </Helmet>
             <div>
                 <Baner city={city}/>
             </div>
