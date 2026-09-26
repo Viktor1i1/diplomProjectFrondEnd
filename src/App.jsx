@@ -15,7 +15,7 @@ import Login from './pages/login/Login'
 
 import Profile from './pages/profile/Profile'
 import Personal from "./pages/profile/Personal"
-import MyBooking from './pages/profile/myBooking'
+import MyBooking from './pages/profile/MyBooking';
 
 import AddEvent from './pages/event/AddEvent'
 import AddArtist from './pages/artist/AddArtist'

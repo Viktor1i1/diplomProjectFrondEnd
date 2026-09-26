@@ -29,28 +29,18 @@ function EventDetail() {
     if (isLoading) {
         return <Spiner />;
     }
-
     if (isError) {
         navigate("/", { replace: true });
         return null;
     }
-
-    if (!isSuccess || !data?.payload) {
-        return null;
-    }
+    if (!isSuccess || !data?.payload) { return null; }
 
     const event = data.payload;
-
     const events = eventsData?.payload?.items || [];
-
-    const eventFromList = events.find(
-        (item) => item.id == id
-    );
+    const eventFromList = events.find((item) => item.id == id);
 
     const artist = eventFromList?.artist;
-
     const eventDate = new Date(event.date);
-
     const day = eventDate.getDate();
 
     const months = ["СІЧНЯ","ЛЮТОГО","БЕРЕЗНЯ","КВІТНЯ","ТРАВНЯ","ЧЕРВНЯ",
@@ -95,9 +85,7 @@ function EventDetail() {
                         </div>
                     </div>
 
-                    <Link to={isAuth ? `/events/${event.id}/booking` : '/login'} className="buy-btn">
-                        КУПИТИ КВИТОК
-                    </Link>
+                    <Link to={isAuth ? `/events/${event.id}/booking` : '/login'} className="buy-btn">КУПИТИ КВИТОК</Link>
                     
                 </div>
                 <div className="share">Поділитися в соцмережах:

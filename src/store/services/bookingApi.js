@@ -22,8 +22,9 @@ export const bookingApi = createApi({
         getBookings: builder.query({
             query: () => "/bookings"
         }),
-        getMyBookings: builder.query({
-            query: () => "/bookings/my"
+        getMyBookings: builder.query({ 
+            query: (userId) => `/bookings/my?userId=${userId}`,
+            providesTags: ["Bookings"]
         }),
         getBooking: builder.query({
             query: (id) => `/bookings/${id}`

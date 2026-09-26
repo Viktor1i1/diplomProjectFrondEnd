@@ -49,10 +49,8 @@ function BookingSuccess({ booking }) {
                     </div>
                 </div>
                 <div className="success-buttons">
-                    <button
-                        onClick={() => navigate("/")}
-                        className="home-button">На головну
-                    </button>
+                    <button onClick={() => navigate("/")} className="home-button">На головну</button>
+                    <button onClick={() => navigate("/profile/myBookings")}>Мої бронювання</button>
                 </div>
             </div>
         </div>

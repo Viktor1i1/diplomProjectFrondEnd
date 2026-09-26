@@ -249,13 +249,6 @@
     font-weight: 600;
     color: #222;
 }
-
-/* =========================
-   ТИП КВИТКА
-   ========================= */
-
-/* Кружечок */
-
 .ticket-type-info {
     display: flex;
     gap: 20px;
@@ -574,11 +567,6 @@
     cursor: pointer;
     transition: all 0.2s ease;
 }
-
-/* =========================
-   ЗАГАЛЬНІ СТИЛІ БРОНЮВАННЯ
-   ========================= */
-
 .booking-pay-page,
 .booking-success-page {
     min-height: 100vh;
@@ -586,16 +574,10 @@
     box-sizing: border-box;
     font-family: Arial, sans-serif;
 }
-
-/* =========================
-   BOOKING PAY
-   ========================= */
-
 .booking-pay-container {
     max-width: 1050px;
     margin: 0 auto;
 }
-
 .booking-pay-container h1 {
     text-align: center;
     font-size: 36px;
@@ -609,11 +591,6 @@
     gap: 30px;
     align-items: stretch;
 }
-
-/* =========================
-   ЗАМОВЛЕННЯ
-   ========================= */
-
 .booking-order {
     background: #ffffff;
     border-radius: 18px;
@@ -673,11 +650,6 @@
     font-size: 24px;
     color: black;
 }
-
-/* =========================
-   ФОРМА ОПЛАТИ
-   ========================= */
-
 .payment-form {
     background: #ffffff;
     border-radius: 18px;
@@ -730,11 +702,6 @@
     grid-template-columns: 1fr 1fr;
     gap: 18px;
 }
-
-/* =========================
-   КНОПКА ОПЛАТИ
-   ========================= */
-
 .payment-button {
     width: 100%;
     height: 50px;
@@ -759,19 +726,10 @@
 }
 
 .payment-button:disabled {
-    background: #b9a3e8;
+    background: #5c5c5c;
     cursor: not-allowed;
     transform: none;
 }
-
-/* =========================
-   ІКОНКА УСПІШНОГО БРОНЮВАННЯ
-   ========================= */
-
-/* =========================
-   ДЕТАЛІ БРОНЮВАННЯ
-   ========================= */
-
 .success-info > div {
     display: flex;
     justify-content: space-between;
@@ -794,11 +752,6 @@
 .home-button:active {
     transform: translateY(0);
 }
-
-/* =========================
-   АДАПТИВНІСТЬ
-   ========================= */
-
 @media (max-width: 800px) {
     .booking-pay-page,
     .booking-success-page {
